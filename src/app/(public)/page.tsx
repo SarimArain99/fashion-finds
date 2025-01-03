@@ -8,7 +8,7 @@ export default function Home() {
       <Link href="/">
         <Image
           priority
-          src="/fashion.finds.png"
+          src="/hero.png"
           alt="FASHION.FINDS"
           className="w-screen md:object-cover object-contain pt-[74px] md:h-screen"
           width={5000}
