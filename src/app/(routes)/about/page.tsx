@@ -12,19 +12,19 @@ function About() {
         name is <b>Sarim</b>, and I&apos;m passionate about bringing you the
         best in fashion through this online store. At
         <span className="font-semibold text-gray-800">FASHION.FINDS</span>, we
-        believe that fashion is not just about clothes—it's about expressing who
+        believe that fashion is not just about clothes—it&apos;s about expressing who
         you are.
       </p>
       <p className="sm:text-xl text-lg text-gray-700 leading-relaxed">
         Our store offers a carefully selected range of products across various
-        categories, including men's and women's fashion, shoes, watches,
+        categories, including men&apos;s and women&apos;s fashion, shoes, watches,
         glasses, and purses. Each piece is chosen with an eye for quality and
         style, ensuring that you have access to the latest trends and timeless
         classNameics.
       </p>
       <p className="sm:text-xl text-lg text-gray-700 leading-relaxed">
         We understand that fashion needs to fit seamlessly into your lifestyle,
-        whether you're dressing for a formal event, heading to work, or simply
+        whether you&apos;re dressing for a formal event, heading to work, or simply
         enjoying a casual day out. That&apos;s why we&apos;ve curated items that
         blend sophistication and comfort, helping you to feel confident and look
         great every day.

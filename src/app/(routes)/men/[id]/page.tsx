@@ -6,7 +6,7 @@ import { useShop } from "@/app/context/ShopContext";
 
 function MenDetails() {
   const params = useParams();
-  const data: any = params.id;
+  const data: string | string[] = params.id;
   const { addToCart, addToFavourites } = useShop();
 
   type menType = {
@@ -22,7 +22,8 @@ function MenDetails() {
   };
 
   const filteredData = menfashion.filter(
-    (item: menType) => item.id === parseInt(data)
+    (item: menType) =>
+      item.id === parseInt(Array.isArray(data) ? data[0] : data)
   );
 
   return (

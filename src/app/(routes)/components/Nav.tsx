@@ -1,5 +1,4 @@
 "use client";
-import { useShop } from "@/app/context/ShopContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
@@ -7,9 +6,6 @@ import React, { useState } from "react";
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const pathName = usePathname();
-  const { addToCart, addToFavourites } = useShop();
-  const cartItems = Object.values(addToCart);
-  const favItems = Object.values(addToFavourites);
 
   function clickHandler() {
     setIsOpen(false);

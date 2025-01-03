@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Men from "../components/Men";
 import Women from "../components/Women";
 import Shoes from "../components/Shoes";

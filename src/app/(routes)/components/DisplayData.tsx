@@ -14,7 +14,7 @@ export default function DisplayData() {
             MEN FASHION
           </h1>
           <p className="text-lg text-gray-700 animate-fadeInUp delay-150 text-center">
-            Discover the latest in men's fashion, featuring timeless styles and
+            Discover the latest in men&apos;s fashion, featuring timeless styles and
             modern trends that suit every occasion.
           </p>
         </div>
@@ -37,7 +37,7 @@ export default function DisplayData() {
             WOMEN FASHION
           </h1>
           <p className="text-lg text-gray-700 animate-fadeInUp delay-150 text-center">
-            Elevate your wardrobe with our stunning collection of women's
+            Elevate your wardrobe with our stunning collection of women&apos;s
             fashion that captures elegance and sophistication.
           </p>
         </div>

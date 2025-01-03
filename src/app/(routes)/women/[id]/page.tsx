@@ -7,7 +7,7 @@ import { useShop } from "@/app/context/ShopContext";
 
 function MenDetails() {
   const params = useParams();
-  const data: any = params.id;
+  const data: string |string[] = params.id;
   const { addToCart, addToFavourites } = useShop();
 
   type menType = {
@@ -23,7 +23,7 @@ function MenDetails() {
   };
 
   const filteredData: any = womenfashion.filter(
-    (item: menType) => item.id === parseInt(data)
+    (item: menType) => item.id === parseInt(Array.isArray(data) ? data[0] : data)
   );
   return (
     <div>
@@ -38,9 +38,9 @@ function MenDetails() {
           material: string;
           stock: number;
           imageUrl: string;
-        }) => {
+        },index:number) => {
           return (
-            <div className="pt-28 flex lg:flex-row flex-col items-center justify-center sm:mx-10 mx-5 min-h-screen">
+            <div key={index} className="pt-28 flex lg:flex-row flex-col items-center justify-center sm:mx-10 mx-5 min-h-screen">
               <div className="h-96 overflow-hidden">
                 <Image
                   src={item.imageUrl}

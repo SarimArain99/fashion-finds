@@ -7,7 +7,7 @@ import { useShop } from "@/app/context/ShopContext";
 
 function MenDetails() {
   const params = useParams();
-  const data: any = params.id;
+  const data: string | string[] = params.id;
   const { addToCart, addToFavourites } = useShop();
   type menType = {
     id: number;
@@ -22,24 +22,29 @@ function MenDetails() {
   };
 
   const filteredData: any = glassesfashion.filter(
-    (item: menType) => item.id === parseInt(data)
+    (item: menType) =>
+      item.id === parseInt(Array.isArray(data) ? data[0] : data)
   );
+
   return (
     <div>
       {filteredData.map(
-        (item: {
-          id: number;
-          name: string;
-          category: string;
-          price: number;
-          size: string[];
-          color: string;
-          material: string;
-          stock: number;
-          imageUrl: string;
-        }) => {
+        (
+          item: {
+            id: number;
+            name: string;
+            category: string;
+            price: number;
+            size: string[];
+            color: string;
+            material: string;
+            stock: number;
+            imageUrl: string;
+          },
+          index: number
+        ) => {
           return (
-            <div className="pt-28 flex lg:flex-row flex-col items-center justify-center sm:mx-10 mx-5 min-h-screen">
+            <div key={index} className="pt-28 flex lg:flex-row flex-col items-center justify-center sm:mx-10 mx-5 min-h-screen">
               <div className="h-96 overflow-hidden">
                 <Image
                   src={item.imageUrl}
@@ -72,12 +77,16 @@ function MenDetails() {
                   Price: <b>${item.price.toFixed(2)}</b>
                 </p>
                 <div className="flex items-center gap-x-2">
-                  <button onClick={() => addToFavourites({
-                    name: item.name,
-                    image: item.imageUrl,
-                    price: 0,
-                    quantity: 0
-                  })}>
+                  <button
+                    onClick={() =>
+                      addToFavourites({
+                        name: item.name,
+                        image: item.imageUrl,
+                        price: 0,
+                        quantity: 0,
+                      })
+                    }
+                  >
                     <svg
                       className={`sm:h-12 h-10 sm:w-12 w-10 `}
                       fill="none"
