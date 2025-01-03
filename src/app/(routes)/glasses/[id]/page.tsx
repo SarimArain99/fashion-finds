@@ -21,7 +21,7 @@ function MenDetails() {
     imageUrl: string;
   };
 
-  const filteredData: any = glassesfashion.filter(
+  const filteredData = glassesfashion.filter(
     (item: menType) =>
       item.id === parseInt(Array.isArray(data) ? data[0] : data)
   );

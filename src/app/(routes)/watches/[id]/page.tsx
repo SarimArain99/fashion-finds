@@ -22,26 +22,32 @@ function MenDetails() {
     imageUrl: string;
   };
 
-  const filteredData: any = watchesfashion.filter(
+  const filteredData = watchesfashion.filter(
     (item: menType) =>
       item.id === parseInt(Array.isArray(data) ? data[0] : data)
   );
   return (
     <div>
       {filteredData.map(
-        (item: {
-          id: number;
-          name: string;
-          category: string;
-          price: number;
-          size: string[];
-          color: string;
-          material: string;
-          stock: number;
-          imageUrl: string;
-        },index:number) => {
+        (
+          item: {
+            id: number;
+            name: string;
+            category: string;
+            price: number;
+            size: string[];
+            color: string;
+            material: string;
+            stock: number;
+            imageUrl: string;
+          },
+          index: number
+        ) => {
           return (
-            <div key={index} className="pt-28 flex lg:flex-row flex-col items-center justify-center sm:mx-10 mx-5 min-h-screen gap-y-4">
+            <div
+              key={index}
+              className="pt-28 flex lg:flex-row flex-col items-center justify-center sm:mx-10 mx-5 min-h-screen gap-y-4"
+            >
               <div className="h-96 overflow-hidden">
                 <Image
                   src={item.imageUrl}
